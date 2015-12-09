@@ -1,0 +1,94 @@
+{
+    "name": "env1",
+    "template_id": "3",
+    "environment_id": "3",
+    "provision": true,
+    "components": [
+        {
+            "id": "security-01",
+            "template_component": "security",
+            "parameters": [
+                {
+                    "id": "office_network",
+                    "value": "0.0.0.0/0"
+                }
+            ],
+            "components": [
+                {
+                    "id": "vpc-01",
+                    "template_component": "vpc"
+                }
+            ]
+        },
+        {
+            "id": "vpc-01",
+            "template_component": "vpc",
+            "parameters": [
+                {
+                    "id": "cidr",
+                    "value": "10.0.0.0/16"
+                }
+            ]
+        },
+        {
+            "id": "subnet-a",
+            "template_component": "subnet",
+            "parameters": [
+                {
+                    "id": "cidr",
+                    "value": "10.0.0.0/24"
+                },
+                {
+                    "id": "az",
+                    "value": "eu-west-1a"
+                }
+            ],
+            "components": [
+                {
+                    "id": "vpc-01",
+                    "template_component": "vpc"
+                }
+            ]
+        },
+        {
+            "id": "subnet-b",
+            "template_component": "subnet",
+            "parameters": [
+                {
+                    "id": "cidr",
+                    "value": "10.0.1.0/24"
+                },
+                {
+                    "id": "az",
+                    "value": "eu-west-1b"
+                }
+            ],
+            "components": [
+                {
+                    "id": "vpc-01",
+                    "template_component": "vpc"
+                }
+            ]
+        },
+        {
+            "id": "subnet-c",
+            "template_component": "subnet",
+            "parameters": [
+                {
+                    "id": "cidr",
+                    "value": "10.0.2.0/24"
+                },
+                {
+                    "id": "az",
+                    "value": "eu-west-1c"
+                }
+            ],
+            "components": [
+                {
+                    "id": "vpc-01",
+                    "template_component": "vpc"
+                }
+            ]
+        }
+    ]
+}
