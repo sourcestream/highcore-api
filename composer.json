@@ -9,7 +9,7 @@
 		"aws/aws-sdk-php-laravel": "~2.0",
 		"mockery/mockery": "0.9.*",
 		"symfony/yaml": "~2.0",
-		"ramsey/uuid": "3.0.x-dev",
+		"ramsey/uuid": "3.0.1",
 		"jlapp/swaggervel": "dev-master",
         "zircote/swagger-php": "2.0.1",
         "cypresslab/GitElephant": "^1.0",

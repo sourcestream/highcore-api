@@ -41,10 +41,12 @@ class StacksSeeder extends Seeder {
                         ],
                         'api_db_password' => [
                             'id' => 'api_db_password',
+                            'sensitive' => true,
                             'value' => Crypt::encrypt(env('DB_PASSWORD'))
                         ],
                         'api_app_key' => [
                             'id' => 'api_db_password',
+                            'sensitive' => true,
                             'value' => env('APP_KEY')
                         ],
                     ],

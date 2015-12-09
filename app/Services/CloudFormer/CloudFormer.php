@@ -98,6 +98,14 @@ class CloudFormer implements CloudFormerContract {
             $stack->get(),
         ];
 
+        /** @var Collection $components_parameters */
+        $components_parameters = $stack->get('components')->pluck()->get();
+        foreach ($components_parameters as $component => $component_data) {
+            if (($parameters = array_get($component_data, 'parameters')) instanceof Collection) {
+                $parameters_flat = $parameters->replaceKeys(function($key) use ($component) {return "${component}_${key}";});
+                $parameters_sources[] = ['parameters' => $parameters_flat];
+            }
+        }
         $parameters = array_pluck($parameters_sources, 'parameters');
 
         if ($with_related && $related_stacks = $stack->get('stacks')) {
