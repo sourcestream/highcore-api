@@ -15,6 +15,7 @@ class ComponentsController extends Controller {
      *     summary="All components",
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Response(response="default", ref="#/responses/Components"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int  $template_id
 	 * @return Response
@@ -34,6 +35,7 @@ class ComponentsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Parameter(ref="#/parameters/component_id"),
      *     @SWG\Response(response="default", ref="#/responses/Component"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int     $template_id
      * @param  string  $component_id

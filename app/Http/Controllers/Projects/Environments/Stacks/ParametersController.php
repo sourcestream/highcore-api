@@ -21,6 +21,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/stack_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Parameters"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key
@@ -45,6 +46,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/source"),
      *     @SWG\Parameter(ref="#/parameters/Parameter"),
      *     @SWG\Response(response="default", ref="#/responses/Parameters"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key
@@ -79,8 +81,10 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/environment_key"),
      *     @SWG\Parameter(ref="#/parameters/stack_key"),
+     *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Parameters"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key
@@ -105,9 +109,11 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/environment_key"),
      *     @SWG\Parameter(ref="#/parameters/stack_key"),
+     *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Parameter(ref="#/parameters/Parameter"),
      *     @SWG\Response(response="default", ref="#/responses/Parameters"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key
@@ -137,8 +143,10 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/environment_key"),
      *     @SWG\Parameter(ref="#/parameters/stack_key"),
+     *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key

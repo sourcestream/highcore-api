@@ -42,6 +42,7 @@ class TemplatesController extends Controller {
      *     path="/templates",
      *     summary="All templates",
      *     @SWG\Response(response="default", ref="#/responses/Templates"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @return Response
 	 */
@@ -55,9 +56,9 @@ class TemplatesController extends Controller {
      * @SWG\Post(
      *     path="/templates",
      *     summary="Store template",
-     *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Parameter(ref="#/parameters/Template"),
      *     @SWG\Response(response="default", ref="#/responses/Template"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @return Response
 	 */
@@ -80,6 +81,7 @@ class TemplatesController extends Controller {
      *     summary="Display template",
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Response(response="default", ref="#/responses/Template"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int  $template_id
 	 * @return Response
@@ -97,6 +99,7 @@ class TemplatesController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Parameter(ref="#/parameters/Template"),
      *     @SWG\Response(response="default", ref="#/responses/Template"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int  $template_id
 	 * @return Response
@@ -116,10 +119,11 @@ class TemplatesController extends Controller {
 	/**
 	 * Remove the specified resource from storage.
      * @SWG\Delete(
-     *     path="/environments/{template_id}",
-     *     summary="Delete environment",
+     *     path="/templates/{template_id}",
+     *     summary="Delete template",
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int  $template_id
 	 * @return Response

@@ -14,6 +14,7 @@ class ParametersController extends Controller {
      *     summary="All template parameters",
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Response(response="default", ref="#/responses/Parameters"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int  $template_id
 	 * @return Response
@@ -33,6 +34,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Parameter(ref="#/parameters/parameter_path"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int     $template_id
      * @param  string  $parameter_path

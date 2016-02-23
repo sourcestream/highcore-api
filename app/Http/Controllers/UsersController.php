@@ -43,6 +43,7 @@ class UsersController extends Controller {
      *     summary="Display user",
      *     @SWG\Parameter(ref="#/parameters/user_id"),
      *     @SWG\Response(response="default", ref="#/responses/User"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $user_id  User Id
      * @return Response

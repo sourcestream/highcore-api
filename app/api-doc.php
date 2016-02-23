@@ -20,9 +20,10 @@
  * )
  * @SWG\Definition(definition="Ui")
  * @SWG\Definition(definition="AwsStatus",
- *      @SWG\Property(property="operation", enum="['CREATE','UPDATE','ROLLBACK','DELETE']"),
- *      @SWG\Property(property="state",
- *          enum="['COMPLETE','FAILED','IN_PROGRESS', 'COMPLETE_CLEANUP_IN_PROGRESS','ROLLBACK_IN_PROGRESS','ROLLBACK_FAILED', 'ROLLBACK_COMPLETE', 'ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS']"),
+ *      @SWG\Property(property="operation", type="string",
+ *          enum={"CREATE","UPDATE","ROLLBACK","DELETE"}),
+ *      @SWG\Property(property="state", type="string",
+ *          enum={"COMPLETE","FAILED","IN_PROGRESS", "COMPLETE_CLEANUP_IN_PROGRESS","ROLLBACK_IN_PROGRESS","ROLLBACK_FAILED", "ROLLBACK_COMPLETE", "ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"}),
  *      @SWG\Property(property="reason", type="string")
  * )
  * @SWG\Definition(definition="AwsOutput",

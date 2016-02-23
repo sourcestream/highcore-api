@@ -39,6 +39,12 @@ use Route;
  *     required=true,
  *     @SWG\Schema(ref="#/definitions/Parameter")
  * )
+ * @SWG\Parameter(
+ *     name="Component",
+ *     in="body",
+ *     required=true,
+ *     @SWG\Schema(ref="#/definitions/Component")
+ * )
  * @SWG\Response(
  *     response="Parameters",
  *     description="Array of Parameters",

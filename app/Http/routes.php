@@ -34,6 +34,7 @@ Route::group(['middleware' => ['auth.basic']], function($router) {
             // Stacks
             Route::resource('stacks', 'StacksController');
             Route::group(['prefix' => 'stacks/{stack_id?}', 'namespace' => 'Stacks'], function($router) {
+                Route::resource('components', 'ComponentsController');
                 Route::resource('parameters', 'ParametersController');
                 Route::resource('components.parameters', 'ComponentsParametersController');
             });
@@ -43,6 +44,7 @@ Route::group(['middleware' => ['auth.basic']], function($router) {
     Route::resource('stacks', 'StacksController');
     Route::group(['prefix' => 'stacks/{stack_id?}', 'namespace' => 'Stacks'], function($router) {
         Route::resource('logs', 'LogsController');
+        Route::resource('components', 'ComponentsController');
         Route::resource('parameters', 'ParametersController');
         Route::resource('templates', 'TemplatesController');
         Route::resource('components.parameters', 'ComponentsParametersController');

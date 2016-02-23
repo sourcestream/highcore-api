@@ -9,30 +9,20 @@
  *     @SWG\Property(property="name", type="string"),
  *     @SWG\Property(property="environment_id", type="integer"),
  *     @SWG\Property(property="template_id", type="integer"),
- *     @SWG\Property(property="components",
- *         @SWG\Schema(type="array",
- *             @SWG\Items(ref="#/definitions/Component")
- *         )
+ *     @SWG\Property(property="components", type="array",
+ *         @SWG\Items(ref="#/definitions/Component")
  *     ),
- *     @SWG\Property(property="stacks", description="referenced Stacks",
- *         @SWG\Schema(type="array",
- *             @SWG\Items(ref="#/definitions/StackRef")
- *         )
+ *     @SWG\Property(property="stacks", description="referenced Stacks", type="array",
+ *         @SWG\Items(ref="#/definitions/StackRef")
  *     ),
- *     @SWG\Property(property="parameters", description="parameter values for this stack",
- *         @SWG\Schema(type="array",
- *             @SWG\Items(ref="#/definitions/Parameter")
- *         )
+ *     @SWG\Property(property="parameters", description="parameter values for this stack", type="array",
+ *         @SWG\Items(ref="#/definitions/Parameter")
  *     ),
- *     @SWG\Property(property="outputs", description="output from the cloud",
- *         @SWG\Schema(type="array",
- *             @SWG\Items(ref="#/definitions/AwsOutput")
- *         )
+ *     @SWG\Property(property="outputs", description="output from the cloud", type="array",
+ *         @SWG\Items(ref="#/definitions/AwsOutput")
  *     ),
  *     @SWG\Property(property="provisioned", type="boolean", description="Was the stack deployed to the cloud or not"),
- *     @SWG\Property(property="status",
- *         @SWG\Schema(ref="#/definitions/AwsOutput")
- *     )
+ *     @SWG\Property(property="status", ref="#/definitions/AwsOutput")
  * )
  *
  * @property string $name

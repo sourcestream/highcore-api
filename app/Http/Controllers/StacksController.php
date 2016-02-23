@@ -12,9 +12,17 @@ use Response;
 /**
  * @SWG\Parameter(
  *     name="stack_id",
+ *     description="Stack Id",
  *     in="path",
  *     required=true,
  *     type="integer",
+ * )
+ * @SWG\Parameter(
+ *     name="stack_key",
+ *     description="Stack Key",
+ *     in="path",
+ *     required=true,
+ *     type="string",
  * )
  * @SWG\Parameter(
  *     name="provision",
@@ -65,6 +73,7 @@ class StacksController extends Controller {
      *     path="/stacks",
      *     summary="All stacks",
      *     @SWG\Response(response="default", ref="#/responses/Stacks"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @return Response
 	 */
@@ -84,6 +93,7 @@ class StacksController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/deprovision"),
      *     @SWG\Parameter(ref="#/parameters/Stack"),
      *     @SWG\Response(response="default", ref="#/responses/Stack"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @return Response
 	 */
@@ -130,6 +140,7 @@ class StacksController extends Controller {
      *     summary="Display stack",
      *     @SWG\Parameter(ref="#/parameters/stack_id"),
      *     @SWG\Response(response="default", ref="#/responses/Stack"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int  $stack_id
 	 * @return Response
@@ -158,6 +169,7 @@ class StacksController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/deprovision"),
      *     @SWG\Parameter(ref="#/parameters/Stack"),
      *     @SWG\Response(response="default", ref="#/responses/Stack"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int  $stack_id
 	 * @return Response
@@ -199,9 +211,10 @@ class StacksController extends Controller {
 	 * Remove the specified resource from storage.
      * @SWG\Delete(
      *     path="/stacks/{stack_id}",
-     *     summary="Delete environment",
+     *     summary="Delete stack",
      *     @SWG\Parameter(ref="#/parameters/stack_id"),
      *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int  $stack_id
 	 * @return Response

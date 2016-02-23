@@ -13,7 +13,7 @@ use Exception;
  *     in="path",
  *     required=true,
  *     type="string",
- *     enum="['cloudformation']")
+ *     enum={"cloudformation"}
  * )
  * @SWG\Parameter(
  *     name="diff",
@@ -33,6 +33,7 @@ class TemplatesController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/format"),
      *     @SWG\Parameter(ref="#/parameters/diff"),
      *     @SWG\Response(response="default", ref="#/responses/Json"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $stack_id  Stack Id
      * @param string $format Template engine to use for template generation

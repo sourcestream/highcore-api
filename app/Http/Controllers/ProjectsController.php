@@ -9,6 +9,13 @@ use Persistence;
 
 /**
  * @SWG\Parameter(
+ *     name="project_id",
+ *     description="Project Id",
+ *     in="path",
+ *     required=true,
+ *     type="integer",
+ * )
+ * @SWG\Parameter(
  *     name="project_key",
  *     description="Project Key",
  *     in="path",
@@ -43,6 +50,7 @@ class ProjectsController extends Controller {
      *     path="/projects",
      *     summary="All projects",
      *     @SWG\Response(response="default", ref="#/responses/Projects"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @return Response
 	 */
@@ -56,10 +64,10 @@ class ProjectsController extends Controller {
      * @SWG\Post(
      *     path="/projects",
      *     summary="Store project",
-     *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/source"),
      *     @SWG\Parameter(ref="#/parameters/Project"),
      *     @SWG\Response(response="default", ref="#/responses/Project"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @return Response
 	 */
@@ -85,6 +93,7 @@ class ProjectsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Project"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int|string $project_key
 	 * @return Response
@@ -103,6 +112,7 @@ class ProjectsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Parameter(ref="#/parameters/Project"),
      *     @SWG\Response(response="default", ref="#/responses/Project"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int|string $project_key
 	 * @return Response
@@ -122,6 +132,7 @@ class ProjectsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int|string $project_key
 	 * @return Response

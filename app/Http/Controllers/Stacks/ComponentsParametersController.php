@@ -19,6 +19,7 @@ class ComponentsParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/stack_id"),
      *     @SWG\Parameter(ref="#/parameters/component_id"),
      *     @SWG\Response(response="default", ref="#/responses/Parameters"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $stack_id  Stack Id
      * @param  string  $component_id
@@ -40,6 +41,7 @@ class ComponentsParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/component_id"),
      *     @SWG\Parameter(ref="#/parameters/Parameter"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $stack_id  Stack Id
      * @param  string  $component_id
@@ -69,6 +71,7 @@ class ComponentsParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/component_id"),
      *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int  $stack_id
      * @param  string  $component_id
@@ -96,6 +99,7 @@ class ComponentsParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Parameter(ref="#/parameters/Parameter"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $stack_id  Stack Id
      * @param  string  $component_id
@@ -127,6 +131,7 @@ class ComponentsParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/component_id"),
      *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $stack_id  Stack Id
      * @param string $component_id

@@ -18,6 +18,7 @@ class ParametersController extends Controller {
      *     summary="All stack parameters",
      *     @SWG\Parameter(ref="#/parameters/stack_id"),
      *     @SWG\Response(response="default", ref="#/responses/Parameters"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $stack_id  Stack Id
      * @return Response
@@ -35,6 +36,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/stack_id"),
      *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int  $stack_id
      * @param  string  $parameter_id
@@ -58,6 +60,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/source"),
      *     @SWG\Parameter(ref="#/parameters/Parameter"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $stack_id  Stack Id
      * @return Response
@@ -91,6 +94,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Parameter(ref="#/parameters/Parameter"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $id  Stack Id
      * @param string  $parameter_id
@@ -117,6 +121,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/stack_id"),
      *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param int $id  Stack Id
      * @param string $parameter_id

@@ -5,7 +5,9 @@
  * @SWG\Definition(
  *     @SWG\Property(property="id", type="integer"),
  *     @SWG\Property(property="name", type="string"),
- *     @SWG\Property(property="parameters", @SWG\Schema(type="array", @SWG\Items(ref="#/definitions/Parameter")))
+ *     @SWG\Property(property="parameters", type="array",
+ *         @SWG\Items(ref="#/definitions/Parameter")
+ *     )
  * )
  *
  * @package Highcore\Models

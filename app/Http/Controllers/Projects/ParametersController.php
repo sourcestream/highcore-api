@@ -19,6 +19,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Parameters"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @return Response
@@ -38,6 +39,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/source"),
      *     @SWG\Parameter(ref="#/parameters/Parameter"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @return Response
@@ -70,6 +72,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  string  $parameter_id
@@ -93,6 +96,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Parameter(ref="#/parameters/Parameter"),
      *     @SWG\Response(response="default", ref="#/responses/Parameter"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  string  $parameter_id
@@ -120,6 +124,7 @@ class ParametersController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/parameter_id"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  string  $parameter_id

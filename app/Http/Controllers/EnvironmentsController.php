@@ -10,9 +10,17 @@ use Persistence;
 /**
  * @SWG\Parameter(
  *     name="environment_id",
+ *     description="Environment Id",
  *     in="path",
  *     required=true,
  *     type="integer",
+ * )
+ * @SWG\Parameter(
+ *     name="environment_key",
+ *     description="Environment Key",
+ *     in="path",
+ *     required=true,
+ *     type="string",
  * )
  * @SWG\Parameter(
  *     name="Environment",
@@ -42,6 +50,7 @@ class EnvironmentsController extends Controller {
      *     path="/environments",
      *     summary="All environments",
      *     @SWG\Response(response="default", ref="#/responses/Environments"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @return Response
 	 */
@@ -55,10 +64,10 @@ class EnvironmentsController extends Controller {
      * @SWG\Post(
      *     path="/environments",
      *     summary="Store environment",
-     *     @SWG\Parameter(ref="#/parameters/environment_id"),
      *     @SWG\Parameter(ref="#/parameters/source"),
      *     @SWG\Parameter(ref="#/parameters/Environment"),
      *     @SWG\Response(response="default", ref="#/responses/Environment"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @return Response
 	 */
@@ -83,6 +92,7 @@ class EnvironmentsController extends Controller {
      *     summary="Display environment",
      *     @SWG\Parameter(ref="#/parameters/environment_id"),
      *     @SWG\Response(response="default", ref="#/responses/Environment"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int  $environment_id
 	 * @return Response
@@ -100,6 +110,7 @@ class EnvironmentsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/environment_id"),
      *     @SWG\Parameter(ref="#/parameters/Environment"),
      *     @SWG\Response(response="default", ref="#/responses/Environment"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int $environment_id
 	 * @return Response
@@ -118,6 +129,7 @@ class EnvironmentsController extends Controller {
      *     summary="Delete environment",
      *     @SWG\Parameter(ref="#/parameters/environment_id"),
      *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param  int  $environment_id
 	 * @return Response

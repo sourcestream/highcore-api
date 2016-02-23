@@ -14,7 +14,7 @@ use Response;
  *   @SWG\Property(property="component_name", type="string"),
  *   @SWG\Property(property="environment_name", type="string"),
  *   @SWG\Property(property="project_name", type="string"),
- *   @SWG\Property(property="status", type="AwsStatus")
+ *   @SWG\Property(property="status", ref="#/definitions/AwsStatus")
  * )
  * @SWG\Response(
  *     response="StackLogs",
@@ -35,6 +35,7 @@ class LogsController extends Controller {
      *     summary="Stack logs",
      *     @SWG\Parameter(ref="#/parameters/stack_id"),
      *     @SWG\Response(response="default", ref="#/responses/StackLogs"),
+     *     security={{"highcore_auth":{}}},
      * )
 	 * @param int $stack_id
 	 * @return Response

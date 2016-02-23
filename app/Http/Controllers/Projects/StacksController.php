@@ -15,6 +15,7 @@ class StacksController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Stacks"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @return Response

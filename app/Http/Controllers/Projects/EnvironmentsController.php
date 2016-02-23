@@ -16,6 +16,7 @@ class EnvironmentsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Environments"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
 	 * @return Response
@@ -34,6 +35,7 @@ class EnvironmentsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Parameter(ref="#/parameters/Environment"),
      *     @SWG\Response(response="default", ref="#/responses/Environments"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @return Response
@@ -55,6 +57,7 @@ class EnvironmentsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/environment_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Environments"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key
@@ -76,6 +79,7 @@ class EnvironmentsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Parameter(ref="#/parameters/Environment"),
      *     @SWG\Response(response="default", ref="#/responses/Environments"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key
@@ -98,6 +102,7 @@ class EnvironmentsController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/environment_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Environments"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key

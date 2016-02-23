@@ -18,6 +18,7 @@ class StacksController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/environment_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Stacks"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key
@@ -40,6 +41,7 @@ class StacksController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/stack_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Stacks"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key
@@ -65,6 +67,7 @@ class StacksController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Parameter(ref="#/parameters/Stack"),
      *     @SWG\Response(response="default", ref="#/responses/Stacks"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @param  int|string  $environment_key

@@ -7,16 +7,10 @@
  * @SWG\Definition(
  *     @SWG\Property(property="id", type="string"),
  *     @SWG\Property(property="template_component", type="string"),
- *     @SWG\Property(property="ui",
- *         @SWG\Schema(ref="#/definitions/Ui")
- *     ),
- *     @SWG\Property(property="status",
- *         @SWG\Schema(ref="#/definitions/AwsStatus")
- *     ),
- *     @SWG\Property(property="parameters",
- *         @SWG\Schema(type="array",
- *             @SWG\Items(ref="#/definitions/Parameter")
- *         )
+ *     @SWG\Property(property="ui", ref="#/definitions/Ui"),
+ *     @SWG\Property(property="status", ref="#/definitions/AwsStatus"),
+ *     @SWG\Property(property="parameters", type="array",
+ *         @SWG\Items(ref="#/definitions/Parameter")
  *     )
  * )
  *

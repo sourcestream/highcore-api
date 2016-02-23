@@ -14,6 +14,7 @@ class StacksController extends Controller {
      *     summary="All stacks of a project",
      *     @SWG\Parameter(ref="#/parameters/environment_id"),
      *     @SWG\Response(response="default", ref="#/responses/Stacks"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int  $environment_id
      * @return Response

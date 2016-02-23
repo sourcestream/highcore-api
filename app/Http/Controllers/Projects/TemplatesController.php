@@ -18,6 +18,7 @@ class TemplatesController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_key"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Templates"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @return Response
@@ -36,6 +37,7 @@ class TemplatesController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Parameter(ref="#/parameters/Template"),
      *     @SWG\Response(response="default", ref="#/responses/Templates"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int|string  $project_key
      * @return Response
@@ -61,6 +63,7 @@ class TemplatesController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/project_id"),
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Response(response="default", ref="#/responses/Templates"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int  $project_id
      * @param  int  $template_id
@@ -83,6 +86,7 @@ class TemplatesController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Parameter(ref="#/parameters/Template"),
      *     @SWG\Response(response="default", ref="#/responses/Templates"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int  $project_id
      * @param  int  $template_id
@@ -111,6 +115,7 @@ class TemplatesController extends Controller {
      *     @SWG\Parameter(ref="#/parameters/template_id"),
      *     @SWG\Parameter(ref="#/parameters/key"),
      *     @SWG\Response(response="default", ref="#/responses/Templates"),
+     *     security={{"highcore_auth":{}}},
      * )
      * @param  int  $project_id
      * @param  int  $template_id
