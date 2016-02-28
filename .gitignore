@@ -7,3 +7,6 @@ _ide_helper.php
 .idea
 public/vendor
 resources/views/vendor
+storage/docs
+storage/bundler
+storage/cache
