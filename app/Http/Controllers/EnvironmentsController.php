@@ -136,7 +136,7 @@ class EnvironmentsController extends Controller {
 	 */
 	public function destroy($environment_id)
 	{
-        Persistence::deleteProject(
+        Persistence::deleteEnvironment(
             Persistence::getEnvironment($environment_id)
         );
         return 'true';
