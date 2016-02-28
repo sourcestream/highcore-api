@@ -2,6 +2,7 @@
 
 use Highcore\Http\Controllers\Controller;
 use Highcore\Models\Parameter;
+use Highcore\Models\Component;
 use Route;
 use Request;
 use Response;

@@ -156,7 +156,7 @@ class StacksController extends Controller {
 
         CloudFormer::describeStack($stack);
 
-        return $stack->toArray(false);
+        return $stack;
 	}
 
 	/**
