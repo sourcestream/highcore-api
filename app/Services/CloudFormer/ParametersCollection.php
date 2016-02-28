@@ -198,7 +198,7 @@
          }
 
          if ($v instanceof Parameter) {
-             return static::filterKeyValue($v->get('id'), $v->get(), $filters_original);
+             return static::filterKeyValue($k, $v->get(), $filters_original);
          }
 
          return isset($result) ? $result : [$k, $v];
