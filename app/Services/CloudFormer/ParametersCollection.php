@@ -100,7 +100,7 @@
 
             // Remove parameters with metadata
             self::NO_METADATA => function($k, $v, $filters) {
-                return array_has(array_flip(['ui','status']), $k) ? null : [$k, $v];
+                return array_has(array_flip(['ui','status','outputs']), $k) ? null : [$k, $v];
             },
 
             // Remove parameters with null value
