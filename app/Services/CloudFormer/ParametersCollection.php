@@ -18,6 +18,7 @@
      const NO_METADATA = 64;
      const DEFINED = 128;
      const MASK_SENSITIVE = 256;
+     const ENABLED = 512;
 
      protected $filters = 0;
      protected $filters_closures = [];
@@ -107,6 +108,11 @@
             self::DEFINED => function($k, $v, $filters) {
                 return is_null($v) ? null : [$k, $v];
             },
+
+            // Remove disabled parameters
+            self::ENABLED => function($k, $v, $filters) {
+                return data_get($v, 'disabled', false) ? null : [$k, $v];
+            },
          ];
      }
 
@@ -141,9 +147,8 @@
         return $this->walk();
      }
 
-     public function now()
-     {
-         return static::make($this->walk());
+     public function now() {
+         return $this->toCollection();
      }
 
      public function toJson($options = 0) {
@@ -158,9 +163,12 @@
                  $v = $this->walk($value->all());
                  $kv = $v ? [$key, $v] : null;
              } elseif ($value instanceof Component) {
+                 /** @var Component $value */
+                 if (is_null(static::filterKeyValue($key, $value, $this->getFilters()))) {
+                     continue;
+                 };
                  $v = $this->walk($value->get());
-                 $kv = $v ? [$key, $v] : null;
-
+                 $kv = ($v && $key) ? [$key, $v] : null;
              } else {
                  $kv = static::filterKeyValue($key, $value, $this->getFilters());
              }
@@ -197,7 +205,7 @@
              list($k, $v) = $result;
          }
 
-         if ($v instanceof Parameter) {
+         if ($v instanceof Parameter || $v instanceof Component) {
              return static::filterKeyValue($k, $v->get(), $filters_original);
          }
 
@@ -234,6 +242,10 @@
 
      public function defined() {
          return static::make($this->items, $this->filters | static::DEFINED);
+     }
+
+     public function enabled() {
+         return static::make($this->items, $this->filters | static::ENABLED);
      }
 
      public function decrypted() {

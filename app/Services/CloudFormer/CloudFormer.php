@@ -146,6 +146,7 @@ class CloudFormer implements CloudFormerContract {
     private function generateTemplate(Stack $stack, Collection $stack_params)
     {
         $stack_definition = ParametersCollection::make($stack_params)
+            ->enabled()
             ->maskSensitive()
             ->noMetadata()
             ->defined()
@@ -318,6 +319,7 @@ class CloudFormer implements CloudFormerContract {
      * @param Stack $stack
      * @param Collection $remote_stacks
      * @return Collection
+     * @throws CloudFormerException
      */
     private function getOutputs(Stack $stack, Collection $remote_stacks = null) {
         $remote_stacks = $remote_stacks ? $remote_stacks : Collection::make([$stack]);
