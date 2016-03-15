@@ -142,6 +142,7 @@ class Sparkle implements TemplateEngine {
      *
      * @param Template $template
      * @return void
+     * @throws \RuntimeException
      */
     public function cleanupTemplate(Template $template)
     {
