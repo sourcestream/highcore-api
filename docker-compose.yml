@@ -1,0 +1,38 @@
+version: '2'
+
+services:
+
+  composer:
+    build: .docker/composer
+    volumes:
+      - $PWD:/app
+    command:
+      - install
+      - -vv
+
+  api:
+    build: .docker/api
+    volumes:
+      - $PWD:/app
+    environment:
+      DB_HOST: db
+      DB_PASSWORD: forge
+      DB_MIGRATE: "true"
+#      APP_KEY: appkey
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: forge
+      POSTGRES_USER: forge
+
+  nginx:
+    build: .docker/nginx
+    volumes:
+      - $PWD/public:/app/public
+    ports:
+      - 80:80
+    depends_on:
+      - api
