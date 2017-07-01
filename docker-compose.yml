@@ -27,6 +27,8 @@ services:
     environment:
       POSTGRES_PASSWORD: forge
       POSTGRES_USER: forge
+    ports:
+      - 5432:5432
 
   nginx:
     build: .docker/nginx
