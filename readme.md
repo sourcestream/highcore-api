@@ -21,3 +21,9 @@ API uses basic auth for users authentication. The password can be generated with
 ```
 openssl passwd -1 "your-password"
 ```
+
+Docker
+======
+
+## build your own docker image
+    docker-compose build api-package

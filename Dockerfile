@@ -13,7 +13,8 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 RUN docker-php-ext-install pdo_pgsql mcrypt
 
-COPY migrate-entrypoint.sh /usr/local/bin/
+COPY .docker/api/migrate-entrypoint.sh /usr/local/bin/
+COPY . /app
 
 ENTRYPOINT ["migrate-entrypoint.sh"]
 #

@@ -18,9 +18,12 @@ services:
       DB_HOST: db
       DB_PASSWORD: forge
       DB_MIGRATE: "true"
-#      APP_KEY: appkey
     depends_on:
       - db
+
+  api-package:
+    build: .
+    image: sourcestream/highcore-api:latest-SNAPSHOT
 
   db:
     image: postgres
