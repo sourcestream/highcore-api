@@ -6,6 +6,7 @@ use Persistence;
 use Request;
 use Response;
 use Route;
+use CloudFormer;
 
 class StacksController extends Controller {
 
@@ -53,11 +54,12 @@ class StacksController extends Controller {
     {
         $key = $stack_key;
         $stack = Persistence::getStack(compact('project_key', 'environment_key', 'key'), Input::get('key', 'id'));
+        CloudFormer::describeStack($stack);
         return $stack;
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Update the specified resource in storage.
      * @SWG\Put(
      *     path="/projects/{project_key}/environments/{environment_key}/stacks/{stack_key}",
      *     summary="Update stack",
@@ -76,6 +78,33 @@ class StacksController extends Controller {
      * @return Response
      */
     public function update($project_key, $environment_key, $stack_key)
+    {
+        $key = $stack_key;
+        $stack = Persistence::getStack(compact('project_key', 'environment_key', 'key'), Input::get('key', 'id'));
+        $request = Request::create('/stacks/'.$stack->id, Route::getCurrentRequest()->method(), Input::all());
+        $result = Route::dispatch($request);
+        return $result;
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * @SWG\Delete(
+     *     path="/projects/{project_key}/environments/{environment_key}/stacks/{stack_key}",
+     *     summary="Delete stack",
+     *     @SWG\Parameter(ref="#/parameters/project_key"),
+     *     @SWG\Parameter(ref="#/parameters/environment_key"),
+     *     @SWG\Parameter(ref="#/parameters/stack_key"),
+     *     @SWG\Parameter(ref="#/parameters/key"),
+     *     @SWG\Response(response="default", ref="#/responses/Bool"),
+     *     security={{"highcore_auth":{}}},
+     * )
+     * @param  int|string  $project_key
+     * @param  int|string  $environment_key
+     * @param  int|string  $stack_key
+     *
+     * @return Response
+     */
+    public function destroy($project_key, $environment_key, $stack_key)
     {
         $key = $stack_key;
         $stack = Persistence::getStack(compact('project_key', 'environment_key', 'key'), Input::get('key', 'id'));

@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth.basic']], function($router) {
     // Templates
     Route::resource('templates', 'TemplatesController');
     Route::group(['prefix' => 'templates/{template_id?}', 'namespace' => 'Templates'], function($router) {
+        Route::resource('stacks', 'StacksController', ['only' => ['index']]);
         Route::resource('components', 'ComponentsController', ['only' => ['index', 'show']]);
         Route::resource('parameters', 'ParametersController', ['only' => ['index', 'show']]);
     });

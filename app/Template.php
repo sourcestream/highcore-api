@@ -18,15 +18,6 @@ class Template extends Model {
     protected $table = 'templates';
 
     /**
-     * The attributes that should be casted to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'parameters' => 'array',
-    ];
-
-    /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -34,7 +25,6 @@ class Template extends Model {
     protected $fillable = [
         'name',
         'project_id',
-        'parameters',
         'repository',
         'refspec',
     ];
