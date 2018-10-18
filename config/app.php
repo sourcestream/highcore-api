@@ -78,7 +78,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => str_pad(env('APP_KEY', 'SomeRandomString'), 24, "\0"),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -95,7 +95,7 @@ return [
 	|
 	*/
 
-	'log' => 'daily',
+	'log' => 'errorlog',
 
 	/*
 	|--------------------------------------------------------------------------

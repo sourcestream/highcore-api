@@ -18,6 +18,7 @@ class Sparkle implements TemplateEngine {
 
     const REMOTE_HIGHCORE = 'highcore';
     const APP_SSH_PRIVKEY = 'app/id_rsa';
+    const PROCESS_TIMEOUT = 300;
 
     protected $authProvider;
 
@@ -71,7 +72,8 @@ class Sparkle implements TemplateEngine {
         ]))->toShell();
 
         $input = new ArrayInput($parameters, $this->getInputDefinition($template));
-        $command = new Process("./template.sh $input", $this->getTemplatePath($template), $this->getTemplateScriptEnv());
+        $command = new Process("./template.sh $input", $this->getTemplatePath($template), $this->getTemplateScriptEnv(),
+            null, self::PROCESS_TIMEOUT);
 
         Log::debug(sprintf('Calling sparke for template %s in project %s: %s',
             $template->name, $template->project->name, $command->getCommandLine()));
